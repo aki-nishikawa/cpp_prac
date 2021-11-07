@@ -1,0 +1,8 @@
+.vscode
+
+# created files
+*.a
+*.o
+*.out
+*.so
+*.gch
