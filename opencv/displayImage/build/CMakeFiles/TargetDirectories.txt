@@ -1,3 +1,0 @@
-/home/shoichi/cpp_prac/opencv/displayImage/build/CMakeFiles/rebuild_cache.dir
-/home/shoichi/cpp_prac/opencv/displayImage/build/CMakeFiles/edit_cache.dir
-/home/shoichi/cpp_prac/opencv/displayImage/build/CMakeFiles/displayImage.dir
