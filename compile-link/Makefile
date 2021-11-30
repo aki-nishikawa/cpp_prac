@@ -1,18 +1,18 @@
 gcc_options = -std=c++17 -Wall
 gcc_options_so = -std=c++17 -Wall -fPIC
 
-all : bin/program_linked.out bin/program_staticlib.out bin/program_shared.out
+all : program_linked.out program_staticlib.out program_shared.out
 
-bin/program_linked.out: main.o hello.o add.o sub.o
+program_linked.out: main.o hello.o add.o sub.o
 	g++ $(gcc_options) -o $@ $^
 
-bin/program_staticlib.out: main.o libmylib.a
+program_staticlib.out: main.o libmylib.a
 	g++ $(gcc_options) -o $@ $^
 
 libmylib.a : hello.o add.o sub.o
 	ar rc $@ $^
 
-bin/program_shared.out: main.o libmylib.so
+program_shared.out: main.o libmylib.so
 	g++ $(gcc_options) -o $@ $^
 
 libmylib.so : hello.o add.o sub.o
