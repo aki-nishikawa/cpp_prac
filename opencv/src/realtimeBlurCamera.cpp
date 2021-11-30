@@ -2,8 +2,7 @@
 
 int main(int argh, char* argv[])
 {
-    cv::VideoCapture cap(0);//デバイスのオープン
-    //cap.open(0);//こっちでも良い．
+    cv::VideoCapture cap(0);
 
     if(!cap.isOpened())
     {
@@ -11,9 +10,9 @@ int main(int argh, char* argv[])
         return -1;
     }
 
-    cv::Mat frame; //取得したフレーム
+    cv::Mat frame;
     cv::Mat dst; 
-    while(cap.read(frame))//無限ループ
+    while(cap.read(frame))
     {
         for ( int i = 1; i < 31; i = i + 2 )
             cv::GaussianBlur(frame, dst, cv::Size(i, i), 0, 0);
@@ -22,14 +21,8 @@ int main(int argh, char* argv[])
         cv::imshow("gaussian blur", dst);
 
         const int key = cv::waitKey(1);
-        if(key == 'q'/*113*/)//qボタンが押されたとき
-        {
+        if(key == 'q'/*113*/){
             break;
-        }
-        else if(key == 's'/*115*/)//sが押されたとき
-        {
-            //フレーム画像を保存する．
-            cv::imwrite("img.png", frame);
         }
     }
     cv::destroyAllWindows();
