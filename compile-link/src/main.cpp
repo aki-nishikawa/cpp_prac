@@ -1,8 +1,6 @@
 #include <iostream>
 
-void hello();
-int Add(int a, int b);
-int Sub(int a, int b);
+#include "myheader.hpp"
 
 int main(int argc, char *argv[]){
 

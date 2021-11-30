@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 ### define project name
-project( OpenCV)
+project( OpenCV_practice)
 
 ### find OpenCV package
 find_package( OpenCV REQUIRED )
@@ -16,6 +16,7 @@ ${PROJECT_SOURCE_DIR}/include
 ### define output directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ./bin)
 
+########## build executable file ##########
 ### for displayImage
 add_executable( displayImage src/displayImage.cpp)
 target_link_libraries( displayImage ${OpenCV_LIBS} )
