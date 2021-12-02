@@ -28,3 +28,7 @@ target_link_libraries( realtimeCamera ${OpenCV_LIBS} )
 ### for realtimeBlurCamera
 add_executable( realtimeBlurCamera src/realtimeBlurCamera.cpp)
 target_link_libraries( realtimeBlurCamera ${OpenCV_LIBS} )
+
+### for detectFace
+add_executable( detectFace src/detectFace.cpp)
+target_link_libraries( detectFace ${OpenCV_LIBS} )

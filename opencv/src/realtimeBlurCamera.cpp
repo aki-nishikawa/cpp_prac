@@ -17,7 +17,7 @@ int main(int argh, char* argv[])
         for ( int i = 1; i < 31; i = i + 2 )
             cv::GaussianBlur(frame, dst, cv::Size(i, i), 0, 0);
         
-        cv::imshow("raw frame", frame);
+        //cv::imshow("raw frame", frame);
         cv::imshow("gaussian blur", dst);
 
         const int key = cv::waitKey(1);
