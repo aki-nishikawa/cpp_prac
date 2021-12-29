@@ -7,3 +7,6 @@ build/
 *.out
 *.so
 *.gch
+
+### ORB_SLAM3 sample data
+ORB_SLAM3/data/
