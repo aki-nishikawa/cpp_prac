@@ -6,7 +6,7 @@ build/
 *.o
 *.out
 *.so
-*.gch
 
 ### ORB_SLAM3 sample data
 ORB_SLAM3/data/
+general/3_array_vector/data

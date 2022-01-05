@@ -1,10 +1,21 @@
 # cpp_prac
 
-C++ で遊びたかった、というかバイトで必要なのでビルド周りの理解をしたかった
+研究室の新人教育用
 
-あと、卒論から逃げたかった
+1. general  
+	基本的な文法とか
+2. opencv  
+    Open CV で遊ぼう
+3. ORB_SLAM3  
+    SLAM で遊ぼうと思ったがリモートのサーバ上でDockerコンテナ立ち上げると Open GL がエラー吐いたので諦め
 
-### Reference
-1. https://rinatz.github.io/cpp-book/
-2. https://ezoeryou.github.io/cpp-intro/
-3. https://opencv.org/
+## 戯言
+正直なところ，たかだか1学年上の人間の話を真に受けるぐらいなら自分で勉強した方が確実です．
+オンラインでも勉強になる資料が多くあるので参考にしてください．
+
+## Reference
+1. https://github.com/kaityo256/python2cpp
+2. https://atcoder.jp/contests/apg4b/
+3. https://rinatz.github.io/cpp-book/
+4. https://cpp.rainy.me
+5. https://opencv.org/
