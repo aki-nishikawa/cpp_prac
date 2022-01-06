@@ -4,18 +4,15 @@ using namespace std;
 #include "../include/human.hpp" 
 #include "../include/student.hpp" 
 
-Student::Student(string n, Gender gen, int a, string m) : Human(n, a, gen){
-  major = m;
+Student::Student(string n, Gender gen, string m) : Human(n, gen)
+{
+    major = m;
 }
 
-void Student::set_score(int s){
-  score = s;
-}
-
-void Student::show(){
-  cout << "【生徒】名前:" << ret_name() << ",性別:" << gender_to_string(gender) << endl;
-}
-
-string Student::ret_name(){
-  return name;
+void Student::show()
+{
+    cout << "[Student] Name: " << name
+         << ", Gender: " << gender_to_string(gender)
+         << ", Major: " << major
+         << endl;
 }

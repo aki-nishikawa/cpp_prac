@@ -6,11 +6,12 @@ string gender_to_string(Gender gen);
 
 class Human {
 protected:
-  string name;
-  int age;
-  Gender gender;
+    string name;
+    Gender gender;
 public:
-  Human(string n, int a, Gender gen);
-  void show();
+    Human(string n, Gender gen);
+    void show();
+    string ret_name();
 };
+
 #endif

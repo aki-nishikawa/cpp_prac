@@ -3,23 +3,31 @@
 using namespace std;
 #include "../include/human.hpp"
 
-
-Human::Human(string n, int a, Gender gen){
-  name = n;
-  gender = gen;
-  age = a;
+Human::Human(string n, Gender gen)
+{
+    name = n;
+    gender = gen;
 }
 
-void Human::show(){
-  cout << "【人間】名前:" << name << ",性別:" << gender_to_string(gender) << endl;
+void Human::show()
+{
+    cout << "[Human] Name: " << name
+         << ", Gender:" << gender_to_string(gender)
+         << endl;
 }
 
-string gender_to_string(Gender gen){
-  switch(gen){
-    case male:
-      return "男";
-    case female:
-      return "女";
-  }
-  return "その他";
+string Human::ret_name()
+{
+    return name;
+}
+
+string gender_to_string(Gender gen)
+{
+    switch(gen){
+        case male:
+            return "male";
+        case female:
+            return "female";
+    }
+    return "else";
 }
