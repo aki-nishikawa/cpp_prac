@@ -1,5 +1,5 @@
-IMAGE_NAME := nishikawa/orb_slam3:latest
-CONTAINER_NAME := nishikawa_orb_slam3
+IMAGE_NAME := nishikawa/opencv:4.4.0_M1
+CONTAINER_NAME := nishikawa_opencv
 
 run:
 	xhost + localhost
@@ -8,8 +8,10 @@ run:
 		--privileged \
 		--env DISPLAY=host.docker.internal:0 \
 		--net host \
+    	--volume ~/.Xauthority:/root/.Xauthority \
+		--volume ~/playground/cpp_prac:/root/workspace \
 		--volume ~/.Xauthority:/root/.Xauthority \
-		--volume ${PWD}/data:/data \
+		--volume /dev:/dev \
 		$(IMAGE_NAME)
 
 remove:

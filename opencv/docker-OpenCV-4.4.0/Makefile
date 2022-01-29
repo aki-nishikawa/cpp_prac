@@ -7,8 +7,8 @@ run:
 		--privileged \
 		--env DISPLAY=${DISPLAY} \
 		--net host \
-    		-v ~/.Xauthority:/root/.Xauthority \
-		-v ~/playground/cpp_prac:/root/workspace \
+    	--volume ~/.Xauthority:/root/.Xauthority \
+		--volume ~/playground/cpp_prac:/root/workspace \
 		--volume /dev:/dev \
 		$(IMAGE_NAME)
 
