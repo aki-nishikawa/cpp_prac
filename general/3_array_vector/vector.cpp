@@ -11,7 +11,7 @@ int main()
         vec[i] = i;
     }
 
-    cout << "begin adress of vector : " << &vec << endl;
+    cout << "adress of vector : " << &vec << endl;
     cout << "size of each element   : " << sizeof(vec[0]) << endl;
 
     for(int i = 0; i < 10; i++)
@@ -20,4 +20,7 @@ int main()
              << ", Value of a[" << i << "] : " << vec[i]
              << endl;
     }
+
+    vec.push_back(1111111);
+    cout << "Address of a[10] : " << &vec[10];
 }
