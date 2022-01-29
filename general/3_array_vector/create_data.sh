@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 OUTPUT_FILE="data"
 if [ -e ./$OUTPUT_FILE ]; then
