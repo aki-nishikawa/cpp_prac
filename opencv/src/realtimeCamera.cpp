@@ -6,24 +6,26 @@ int main(int argh, char* argv[])
 
     if(!cap.isOpened())
     {
-	std::cout << "Failed to Open Camera !!" << std::endl;
+	    std::cout << "Failed to Open Camera !!" << std::endl;
         return -1;
     }
 
-    cv::Mat frame;
-    cv::Mat dst; 
-    while(cap.read(frame))
+    cv::Mat rawFrame, flipFrame;
+    while(cap.read(rawFrame))
     {
-        cv::imshow("raw frame", frame);
+        //cv::imshow("raw frame", rawFrame);
+        cv::flip(rawFrame, flipFrame, 1);
+        cv::imshow("frame", flipFrame);
 
         const int key = cv::waitKey(1);
         if(key == 'q'/*113*/){
             break;
         }else if(key == 's'/*115*/){
             std:: cout << "take pictured!!" << std::endl;
-            cv::imwrite("img.png", frame);
+            cv::imwrite("img.png", flipFrame);
         }
     }
+
     cv::destroyAllWindows();
     std::cout << "Program Finishied Properly" << std::endl;
     return 0;

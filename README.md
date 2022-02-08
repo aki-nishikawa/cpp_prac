@@ -3,9 +3,23 @@
 研究室の新人教育用
 
 1. general  
-	基本的な文法とか
+    基本的な文法とか
+
 2. opencv  
-    Open CV で遊ぼう
+    Open CV で遊ぼう.  
+    せっかくなのでソースからビルドしようと思いビルド用の Dockerfile とか用意しましたが， 
+    ~~Mac のカメラを使うのが面倒臭くなったので~~
+    brew で入れます.
+
+    Open CV のインストール
+    ```
+        brew install opencv
+    ```
+    消す時
+    ```
+        brew uninstall opencv
+    ```
+
 3. ORB_SLAM3  
     SLAM で遊ぼうと思ったがリモートのサーバ上でDockerコンテナ立ち上げると Open GL がエラー吐いたので諦め
 

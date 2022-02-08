@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     if(!image.data)
     {
-        std::cerr << "No Image Data" << std::endl;
+        std::cerr << "ERROR: No Image Data" << std::endl;
         return 1;
     }
 

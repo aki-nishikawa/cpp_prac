@@ -6,11 +6,18 @@
 
 //void detectAndPoint ( &cv::CascadeClassifier detector, &cv::Mat frame );
 
-int main()
+int main(int argc, char *argv[])
 {
+
+    if(argc != 2)
+    {
+        std::cerr << "Usage: ./detectFace [path to cascade]" << std::endl;
+        return 1;
+    }
+
     //-- Define detector & Load casecade
     cv::CascadeClassifier faceDetector;
-    if( !faceDetector.load( "/home/pi/cpp_prac/opencv/data/haarcascades/haarcascade_frontalface_alt.xml" ) )
+    if( !faceDetector.load(argv[1]))
     {
         std::cerr << "Error loading face cascade" << std::endl;
         return -1;
@@ -25,32 +32,33 @@ int main()
     }
 
     //-- Read frame & Apply detector
-    cv::Mat frame;
-    while( cap.read( frame ) )
+    cv::Mat rawFrame, grayFrame;
+    while( cap.read( rawFrame ) )
     {
-        if( frame.empty() )
+        if( rawFrame.empty() )
         {
             std::cout << "No captured fram. Break" << std::endl;
             break;
         }
 
+        cv::flip(rawFrame, rawFrame, 1);
+
         //-- Apply the detector
         //detectAndPoint( faceDetector, frame );
-        cv::Mat frame_gray;
-        cv::cvtColor( frame, frame_gray, cv::COLOR_BGR2GRAY );
-        cv::equalizeHist( frame_gray, frame_gray );
+        cv::cvtColor( rawFrame, grayFrame, cv::COLOR_BGR2GRAY );
+        cv::equalizeHist( grayFrame, grayFrame );
 
         // Detect faces
         std::vector<cv::Rect> faces;
-        faceDetector.detectMultiScale( frame_gray, faces );
+        faceDetector.detectMultiScale( grayFrame, faces );
 
         for ( size_t i = 0; i < faces.size(); i++ )
         {
             cv::Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
-            cv::ellipse( frame, center, cv::Size( faces[i].width/2, faces[i].height/2 ), 0, 0, 360, cv::Scalar( 255, 0, 255 ), 4 );
+            cv::ellipse( rawFrame, center, cv::Size( faces[i].width/2, faces[i].height/2 ), 0, 0, 360, cv::Scalar( 255, 0, 255 ), 4 );
         }
 
-        cv::imshow( "Face Detection", frame );
+        cv::imshow( "Face Detection", rawFrame);
 
         if( cv::waitKey(10) == 27 )
         {
