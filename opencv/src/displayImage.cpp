@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     if(argc != 2)
     {
-        std::cerr << "Usage: ./displayImage.out [image_path]" << std::endl;
+        std::cerr << "Usage: ./displayImage [image_path]" << std::endl;
         return 1;
     }
 
