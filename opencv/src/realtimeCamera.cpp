@@ -2,25 +2,29 @@
 
 int main(int argh, char* argv[])
 {
-    cv::VideoCapture cap(0);
+    // カメラに接続する (1行)
 
+    // 接続できなければエラーを吐く
     if(!cap.isOpened())
     {
 	    std::cout << "Failed to Open Camera !!" << std::endl;
         return -1;
     }
 
+    // フレームを格納するための変数を定義
     cv::Mat rawFrame, flipFrame;
-    while(cap.read(rawFrame))
+    while( /* カメラの画像を取ってくる (1行) */ )
     {
-        //cv::imshow("raw frame", rawFrame);
-        cv::flip(rawFrame, flipFrame, 1);
-        cv::imshow("frame", flipFrame);
+        // 画像を左右反転させる (1行)
+
+        // 画像を表示
+        cv::imshow("raw frame", rawFrame);
+        // cv::imshow("fliped frame", flipFrame);
 
         const int key = cv::waitKey(1);
-        if(key == 'q'/*113*/){
+        if(key == 'q'){ // 'q' が押されると終了 (while文を抜ける)
             break;
-        }else if(key == 's'/*115*/){
+        }else if(key == 's'){   // 's' が押されると画像を保存
             std:: cout << "take pictured!!" << std::endl;
             cv::imwrite("img.png", flipFrame);
         }

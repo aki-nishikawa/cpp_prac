@@ -13,8 +13,7 @@ int main(int argh, char* argv[])
     cv::Mat rawFrame, blurFrame;
     while(cap.read(rawFrame))
     {
-        for ( int i = 1; i < 31; i = i + 2 )
-            cv::GaussianBlur(rawFrame, blurFrame, cv::Size(i, i), 0, 0);
+        // ガウシアンブラーをかける (2行)
         
         cv::imshow("raw frame", rawFrame);
         cv::imshow("gaussian blur", blurFrame);
