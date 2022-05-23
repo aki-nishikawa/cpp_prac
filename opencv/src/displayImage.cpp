@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
     cv::Mat image;
 
     // 画像を読み込んで image に格納する (1行)
+    image = cv::imread(argv[1], 1);
 
     // imageにデータが存在しない場合にはエラーを吐く
     if(!image.data)
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
     cv::namedWindow("Image", cv::WINDOW_AUTOSIZE);
 
     // Windowに画像を表示する (1行)
+    cv::imshow("Image", image);
 
     // 何かキーが押されたら終了
     cv::waitKey(0);
