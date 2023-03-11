@@ -2,7 +2,8 @@
 
 int main(int argh, char* argv[])
 {
-    // カメラに接続する (1行)
+    // カメラに接続する
+    cv::VideoCapture cap(0);
 
     // 接続できなければエラーを吐く
     if(!cap.isOpened())
@@ -13,13 +14,14 @@ int main(int argh, char* argv[])
 
     // フレームを格納するための変数を定義
     cv::Mat rawFrame, flipFrame;
-    while( /* カメラの画像を取ってくる (1行) */ )
+    while(cap.read(rawFrame))
     {
-        // 画像を左右反転させる (1行)
+        // 画像を左右反転させる
+        cv::flip(rawFrame, flipFrame, 1);
 
         // 画像を表示
-        cv::imshow("raw frame", rawFrame);
-        // cv::imshow("fliped frame", flipFrame);
+        // cv::imshow("raw frame", rawFrame);
+        cv::imshow("fliped frame", flipFrame);
 
         const int key = cv::waitKey(1);
         if(key == 'q'){ // 'q' が押されると終了 (while文を抜ける)

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     //-- Define detector & Load casecade
     cv::CascadeClassifier faceDetector;
-    if( !/* カスケードを読み込めなかったらエラー */ )
+    if( !faceDetector.load(argv[1]))
     {
         std::cerr << "Error loading face cascade" << std::endl;
         return -1;
@@ -49,12 +49,15 @@ int main(int argc, char *argv[])
 
         // Detect faces
         std::vector<cv::Rect> faces;
-        // 顔を検出して矩形の vector を faces に格納 (1行)
+        // 顔を検出して矩形の vector を faces に格納
+        faceDetector.detectMultiScale( grayFrame, faces );
 
         //-- Visualize detected faces
         for ( size_t i = 0; i < faces.size(); i++ )
         {
-            // 顔を囲う (2行)
+            // 顔を囲う
+            cv::Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
+            cv::ellipse( rawFrame, center, cv::Size( faces[i].width/2, faces[i].height/2 ), 0, 0, 360, cv::Scalar( 255, 0, 255 ), 4 );
         }
 
         cv::imshow( "Face Detection", rawFrame);
