@@ -77,8 +77,30 @@ SD のカリキュラムだけで勉強してきた人にとって C/C++ が難�
 
 
 ## Reference
+
 1. https://github.com/kaityo256/python2cpp
+
+    物理情報工学科の渡辺先生の GitHub リポジトリ．
+    Python の経験がある人に向けて C++ についてかなり分かりやすく書かれている．
+    他にも有用なリポジトリが多々ある．
+
+    Twitter をみると子煩悩なお父さん．
+
 2. https://atcoder.jp/contests/apg4b/
+
+    競技プログラミングコンテストを運営する AtCoder が提供している初心者向けプログラミング教材．
+    C 言語特有の話を切り分けて書いてくれているので，プログラミングの入門資料としてもちょうど良い．
+    途中から計算量等，競プロ寄りの知識も出てくるが，この辺りもかなり重要な知識なので一通り目を通してもよさそう．
+
 3. https://rinatz.github.io/cpp-book/
+
+    どこの誰が書いたのか良く分からないが分かりやすい．
+
 4. https://cpp.rainy.me
+
+    [C++ 界隈では有名な人](https://ja.everybodywiki.com/%E6%B1%9F%E6%B7%BB%E4%BA%AE) が書いた C++ の資料．
+    C++ の規格について厳密に解説してくれているのでものすごく参考になる．
+
 5. https://opencv.org/
+
+    Open CV の公式サイト
